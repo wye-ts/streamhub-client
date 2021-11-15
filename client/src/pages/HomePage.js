@@ -9,7 +9,11 @@ export default function HomePage() {
 					<div className="col-1"></div>
 					<div className="col-3">
 						<NavLink to="/streaming/gUTtJjV852c">
-							<img className="doraMovie" src="/images/movie1.jpg" alt="Dora"></img>
+							<img
+								className="doraMovie"
+								src="/images/movie1.jpg"
+								alt="Dora"
+							></img>
 							<div className="movie1">Dora Explorer</div>
 							<img
 								className="playButton1"
@@ -95,7 +99,11 @@ export default function HomePage() {
 					></img>
 				</div>
 				<div className="carouselLeft2">
-					<img className="wendyWu" src="/images/wendywu.png" alt="Wendy Wu"></img>
+					<img
+						className="wendyWu"
+						src="/images/wendywu.png"
+						alt="Wendy Wu"
+					></img>
 				</div>
 				<img
 					className="rightClick1"

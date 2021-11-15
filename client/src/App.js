@@ -20,21 +20,16 @@ function App() {
 	const [isAuth, setIsAuth] = useState(false);
 	const history = useHistory();
 
-	console.log('Is user login in ? ', isAuth);
-
 	useEffect(() => {
 		const fetchedEmail = localStorage.getItem('email');
 		const fetchedPassword = localStorage.getItem('password');
 		const fetchedAuthData = JSON.parse(localStorage.getItem('authData'));
-		console.log({ fetchedEmail, fetchedPassword });
-		console.log(fetchedAuthData);
 		if (!fetchedAuthData && !fetchedEmail && !fetchedPassword) return;
 		for (const userData of fetchedAuthData.userlist) {
 			if (
 				fetchedEmail === userData['email'] &&
 				fetchedPassword === userData['password']
 			) {
-				console.log('auto login');
 				setIsAuth(true);
 				break;
 			}
@@ -42,7 +37,6 @@ function App() {
 	}, []);
 
 	const logout = () => {
-		console.log('logging out');
 		localStorage.removeItem('userid');
 		localStorage.removeItem('email');
 		localStorage.removeItem('fullName');
@@ -54,16 +48,13 @@ function App() {
 	};
 
 	const login = userInput => {
-		console.log(userInput.email, userInput.password);
 		const fetchedAuthData = JSON.parse(localStorage.getItem('authData'));
-		console.log(fetchedAuthData);
-		if (!fetchedAuthData) return;
+		if (!fetchedAuthData) return false;
 		for (const userData of fetchedAuthData.userlist) {
 			if (
 				userData.email === userInput.email &&
 				userData.password === userInput.password
 			) {
-				console.log('successfully login');
 				localStorage.setItem('userid', userData.userid);
 				localStorage.setItem('email', userData.email);
 				localStorage.setItem('fullName', userData.fullName);
