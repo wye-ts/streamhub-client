@@ -13,6 +13,63 @@
 	box-shadow: none !important;
 }
 
+.home-container {
+	display: flex;
+	justify-content: center;
+}
+
+.home-top {
+	display: flex;
+	gap: 0.3rem;
+}
+
+.image-wrap {
+	width: 27rem;
+	display: flex;
+	justify-content: center;
+	background-color: black;
+}
+
+.home-top img {
+	height: 20rem;
+	width: 27rem;
+	object-fit: cover;
+	object-position: top;
+}
+
+.home-red {
+	width: 200px;
+	background-color: #430f02;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.home-red img {
+	display: block;
+	width: 3rem;
+	height: 3rem;
+	background-color: #fff;
+	border-radius: 50%;
+	cursor: pointer;
+	margin: 1rem 0;
+}
+
+.home-red img:last-child {
+	transform: rotate(180deg);
+}
+
+.home-red svg {
+	display: block;
+	width: 3rem;
+	padding: 1rem 0;
+	cursor: pointer;
+}
+
+.home-red svg:last-child {
+	transform: rotate(180deg);
+}
+
 /* NavigationBar section */
 
 .navbar-container a,
@@ -248,7 +305,6 @@
 	height: 3rem;
 }
 
-
 .userlist button {
 	width: 6rem;
 	position: absolute;
@@ -267,14 +323,13 @@
 @media (max-width: 768px) {
 	.userlist {
 		flex-direction: column !important;
-		align-items: center ;
+		align-items: center;
 	}
 
 	.userlist .card {
 		width: 100%;
 	}
 }
-
 
 /* User Card */
 
@@ -385,5 +440,4 @@
 		flex-direction: column;
 		align-items: center;
 	}
-
 }
