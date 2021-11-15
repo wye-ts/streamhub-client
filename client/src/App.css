@@ -1,0 +1,389 @@
+.App {
+	margin: 0;
+	min-height: 100vh;
+	min-width: 100vw;
+}
+
+.spacer {
+	flex-grow: 1;
+}
+
+.btn:focus {
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+/* NavigationBar section */
+
+.navbar-container a,
+.navbar-container a:hover {
+	text-decoration: none;
+	color: inherit;
+}
+
+.navbar-dropdown a,
+.navbar-dropdown a:hover,
+.navbar-dropdown a.active,
+.navbar-dropdown a:active {
+	color: #333;
+}
+
+.navbar-dropdown div,
+.navbar-dropdown div:focus,
+.navbar-dropdown div:active,
+.navbar-dropdown div.active {
+	background-color: #fff;
+}
+
+/* Login Page */
+
+.auth-form {
+	max-width: 35rem !important;
+	text-align: left !important;
+	box-shadow: var(--elevation-3);
+	padding: 2rem 3rem 4rem 3rem !important;
+	border-radius: 8px;
+}
+
+.auth-form input {
+	box-shadow: none !important;
+}
+
+/* Profile Settings Page */
+
+.settings-container {
+	max-width: 45rem !important;
+}
+
+.settings-profile {
+	display: flex;
+}
+
+.settings-profile img {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.settings-profile img + div {
+	display: flex;
+	flex-direction: column;
+}
+
+.settings-security p {
+	cursor: pointer;
+}
+
+.settings-security p:hover {
+	text-decoration: underline;
+}
+
+.settings-security p:last-child {
+	color: var(--danger-color);
+}
+
+.edit-username {
+	display: flex;
+}
+
+.edit-username + form input {
+	box-shadow: none !important;
+}
+
+.edit-username svg {
+	width: 1rem;
+	margin-left: 10px;
+	cursor: pointer;
+	padding-bottom: 5px;
+}
+
+/* Streaming Page */
+
+.streaming-container {
+	display: flex;
+	justify-content: center;
+}
+
+.streaming-userlist {
+	flex-shrink: 0;
+	width: 12rem;
+	max-height: 600px;
+	overflow-y: auto;
+	border-radius: 0 !important;
+}
+
+.streaming-userlist a,
+.streaming-userlist a.active,
+.streaming-userlist a:active,
+.streaming-userlist a:hover {
+	text-decoration: none;
+	color: unset;
+}
+
+.streaming-chat-top:hover::-webkit-scrollbar,
+.streaming-userlist:hover::-webkit-scrollbar {
+	display: block;
+}
+
+.streaming-chat-top::-webkit-scrollbar,
+.streaming-userlist::-webkit-scrollbar {
+	width: 6px;
+	background-color: none;
+	box-shadow: unset;
+	display: none;
+}
+
+.streaming-chat-top::-webkit-scrollbar-track,
+.streaming-userlist::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+.streaming-chat-top::-webkit-scrollbar-thumb,
+.streaming-userlist::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: #ccc;
+}
+
+.streaming-chat {
+	flex-shrink: 0;
+	width: 20rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 0 !important;
+}
+
+.streaming-chat div:last-child {
+	border: none !important;
+}
+
+.streaming-chat textarea {
+	resize: none;
+	border: none !important;
+	border-radius: 0 !important;
+	border-top: rgba(0, 0, 0, 0.125) solid 1px !important;
+	box-shadow: none !important;
+}
+
+.streaming-chat-wrap {
+	padding: 8px 16px;
+}
+
+.streaming-chat-top {
+	max-height: 498px;
+	overflow-y: auto;
+}
+
+@media (max-width: 992px) {
+	.streaming-userlist {
+		display: none !important;
+	}
+
+	.streaming-container {
+		flex-direction: column;
+	}
+
+	.streaming-container iframe {
+		width: auto;
+	}
+
+	.streaming-chat {
+		width: 100%;
+		height: 20rem;
+	}
+}
+
+/* Vedio List  */
+
+.videolist {
+	gap: 0.8rem;
+}
+
+.videolist div {
+	border: none !important;
+}
+
+.videolist a,
+.videolist a.active,
+.videolist a:active,
+.videolist a:hover {
+	text-decoration: none;
+	color: unset;
+}
+
+@media (max-width: 768px) {
+	.videolist {
+		flex-direction: column !important;
+	}
+}
+
+/* User List  */
+
+.userlist {
+	gap: 0.8rem;
+}
+
+.userlist img {
+	height: 10rem;
+	object-fit: cover;
+}
+
+.userlist p {
+	font-size: 1rem;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.userlist .card {
+	width: 175px;
+	border: none !important;
+	box-shadow: var(--elevation-3);
+	border-radius: 5px !important;
+}
+
+.userlist a + div {
+	position: relative;
+	height: 3rem;
+}
+
+
+.userlist button {
+	width: 6rem;
+	position: absolute;
+	bottom: 10px;
+	left: calc(50% - 3rem);
+}
+
+.userlist a,
+.userlist a.active,
+.userlist a:active,
+.userlist a:hover {
+	text-decoration: none;
+	color: unset;
+}
+
+@media (max-width: 768px) {
+	.userlist {
+		flex-direction: column !important;
+		align-items: center ;
+	}
+
+	.userlist .card {
+		width: 100%;
+	}
+}
+
+
+/* User Card */
+
+.user-card img {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	margin-right: 8px;
+	position: relative;
+	object-fit: cover;
+}
+
+.user-card img + div {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	position: absolute;
+	left: 40px;
+	top: 33px;
+}
+
+/* User Chat */
+
+.user-chat img {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	grid-area: profile;
+}
+
+.user-chat img + div {
+	grid-area: body;
+}
+
+.user-chat img + div span:first-child {
+	margin-right: 8px;
+	color: #767676;
+}
+
+.user-chat img + div span:first-child + span {
+	font-size: 0.9rem;
+}
+
+.user-chat {
+	display: grid;
+	grid-template-columns: 35px 250px;
+	grid-template-rows: auto;
+	grid-template-areas: 'profile body ';
+}
+
+/* Danger modal */
+
+.danger-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2rem;
+	height: 2rem;
+	background-color: var(--danger-color);
+	border-radius: 5px;
+}
+
+.danger-modal img {
+	width: 0.5rem;
+}
+
+/* Upload Profile Modal Section */
+.upload-modal-profile-pic {
+	width: 100%;
+	height: auto;
+	margin-bottom: 2rem;
+}
+
+.modal-body input {
+	box-shadow: none !important;
+}
+
+/* Subscription Page */
+
+.subscription-top {
+	display: flex;
+}
+
+.subscription-top img {
+	height: 20rem;
+	object-fit: cover;
+	border-radius: 0 !important;
+}
+
+.subscription-profile {
+	border: none !important;
+	box-shadow: var(--elevation-3);
+}
+
+.button-group {
+	margin-top: 1rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.button-group button {
+	width: 47%;
+	border-radius: 0;
+}
+
+@media (max-width: 768px) {
+	.subscription-top {
+		flex-direction: column;
+		align-items: center;
+	}
+
+}
