@@ -19,12 +19,18 @@ export default function StreamingPage() {
 	const chatRef = useRef();
 
 	useEffect(() => {
-		setChatHistory([
-			{
-				name: localStorage.getItem('username') || 'visitor456',
-				chat: 'Join the room',
-			},
-		]);
+		setChatHistory([]);
+		setTimeout(() => {
+			setChatHistory([
+				{
+					chat: 'hey @all',
+					name: userlist[Math.floor(Math.random() * 100)].firstName,
+					pic:
+						'https://source.unsplash.com/random/' +
+						Math.floor(Math.random() * 100),
+				},
+			]);
+		}, 2000);
 	}, [id]);
 
 	useEffect(() => {
@@ -42,6 +48,9 @@ export default function StreamingPage() {
 		updatedChatHistory.push({
 			name: localStorage.getItem('username') || 'visitor456',
 			chat: chat,
+			pic:
+				localStorage.getItem('imgUrl') ||
+				'https://source.unsplash.com/user/erondu/daily',
 		});
 		setChat('');
 		setChatHistory(updatedChatHistory);
@@ -89,7 +98,7 @@ export default function StreamingPage() {
 					></iframe>
 					<Card className="streaming-chat">
 						<div ref={chatRef} className="streaming-chat-top">
-							<div className="streaming-chat-wrap">
+							{/* <div className="streaming-chat-wrap">
 								<UserChat
 									pic="https://source.unsplash.com/daily"
 									name="Nancy"
@@ -102,20 +111,30 @@ export default function StreamingPage() {
 									name="Sybilla"
 									text="Hi @Nancy"
 								/>
+							</div> */}
+							<div className="streaming-chat-wrap">
+								<div className="user-chat">
+									<img
+										src={
+											localStorage.getItem('imgUrl') ||
+											'https://source.unsplash.com/user/erondu/daily'
+										}
+										alt="profile pic"
+									/>
+									<div>
+										<span>
+											{(localStorage.getItem('username') || 'vistor456') +
+												' join the room'}
+										</span>
+									</div>
+								</div>
 							</div>
 							{chatHistory.map((data, index) => (
 								<div
 									key={data.name + data.chat + index}
 									className="streaming-chat-wrap"
 								>
-									<UserChat
-										name={data.name}
-										text={data.chat}
-										pic={
-											localStorage.getItem('imgUrl') ||
-											'https://source.unsplash.com/user/erondu/daily'
-										}
-									/>
+									<UserChat name={data.name} text={data.chat} pic={data.pic} />
 								</div>
 							))}
 						</div>
