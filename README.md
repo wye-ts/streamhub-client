@@ -1,5 +1,5 @@
 # StreamHub
-StreamHub Project
+StreamHub Project- frontend only
 
 1. cd client
 2. yarn install
